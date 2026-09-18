@@ -19,3 +19,8 @@ results.csv
 results.sarif
 scan.db
 graph.json
+
+# caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
