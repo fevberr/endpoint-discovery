@@ -1,0 +1,14 @@
+CREATE TABLE IF NOT EXISTS endpoints (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  url TEXT NOT NULL,
+  method TEXT NOT NULL,
+  category TEXT NOT NULL,
+  confidence TEXT NOT NULL,
+  score INTEGER NOT NULL,
+  detector TEXT NOT NULL,
+  source_resource TEXT NOT NULL,
+  line INTEGER NOT NULL DEFAULT 0,
+  column INTEGER NOT NULL DEFAULT 0,
+  expression TEXT NOT NULL DEFAULT '',
+  framework TEXT
+);
