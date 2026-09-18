@@ -13,3 +13,9 @@ target/
 # editor
 .vscode/
 .idea/
+
+# local artifacts
+results.csv
+results.sarif
+scan.db
+graph.json
