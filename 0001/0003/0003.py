@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 from pathlib import Path
 from importlib import import_module
@@ -20,6 +20,8 @@ def _promote_html_resources(_res, _opts) -> None:
     _endpoint = import_module("0001.0003.0001")
     _known = {(e.url, e.method, e.detector) for e in _res.endpoints}
     for _r in _res.resources:
+        if _r.source is None or _r.source == "html":
+            continue
         if _r.kind not in ("form", "javascript", "stylesheet", "other"):
             continue
         if _r.kind == "form":
