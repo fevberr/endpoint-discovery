@@ -1,30 +1,104 @@
+
 # endpoint-discovery
+
+<img src="https://p16-tiktok-dm-sticker-sign-sg.ibyteimg.com/tos-alisg-i-dhq7zx4c1p-sg/d179a29e560642bba3707aa2ec9babd8~tplv-dhq7zx4c1p-full.awebp?rk3s=00edd399&x-expires=1792029789&x-signature=qrJJe26DGlzonOoaKdczYDcF0BE%3D" alt="RAHHHH">
 
 Static endpoint and web reconnaissance framework.
 
-Extracts candidate API endpoints from HTML, JavaScript bundles, TypeScript sources, source maps, and configuration objects. Passive and static only.
+---
+
+**Stack**
+
+<p>
+  <img src="https://cdn.simpleicons.org/python" alt="Python" width="20">
+  <img src="https://cdn.simpleicons.org/rust" alt="Rust" width="20">
+  <img src="https://cdn.simpleicons.org/go" alt="Go" width="20">
+  <img src="https://cdn.simpleicons.org/typescript" alt="TypeScript" width="20">
+  <img src="https://cdn.simpleicons.org/sqlite" alt="SQLite" width="20">
+</p>
+
+---
+
+**Author** — [fevberr](https://github.com/fevberr) *(super coolz guy btw)*
+
+---
 
 ## Install
 
-    python -m pip install -e .
+```powershell
+git clone https://github.com/fevberr/endpoint-discovery.git
+cd endpoint-discovery
+python -m pip install -e .
+```
 
-## Quick start
+Optional native accelerators:
 
-    endpoint-discovery --help
-    endpoint-discovery --file 0013\0001.html --json
-    endpoint-discovery --file 0013\0003.js --confidence high
-    endpoint-discovery https://example.com --depth 2 --source-maps
+```powershell
+cd 0002; cargo build --release; cd ..
+cd 0003; go build ./...; cd ..
+cd 0004; npm install; npm run build; cd ..
+```
 
-## Output formats
+---
 
-- terminal
-- --json
-- --jsonl
-- --csv results.csv
-- --sarif results.sarif
-- --sqlite scan.db
-- --graph graph.json
+## Use
+
+```powershell
+python -m _launcher --help
+
+python -m _launcher --file 0013\0001.html
+python -m _launcher --file 0013\0003.js --confidence high
+
+python -m _launcher https://example.com
+python -m _launcher https://example.com --depth 2 --source-maps
+python -m _launcher https://example.com --json
+python -m _launcher https://example.com --jsonl
+python -m _launcher https://example.com --csv results.csv
+python -m _launcher https://example.com --sarif results.sarif
+python -m _launcher https://example.com --sqlite scan.db
+python -m _launcher https://example.com --graph graph.json
+```
+
+---
+## What it does
+
+* Crawls pages and parses HTML/JS to discover, score, and export endpoints.
+
+## What it never does
+
+* No endpoint probing, form submission, authentication attempts, or hidden requests.
+
+---
+
+## Tests
+
+```powershell
+python -m pytest 0009 -q
+```
+
+---
 
 ## License
+```
+MIT License
 
-MIT.
+Copyright (c) 2026 fevberr
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
