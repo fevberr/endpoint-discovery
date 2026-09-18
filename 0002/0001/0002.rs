@@ -18,9 +18,7 @@ pub fn _0001(s: &str) -> Vec<String> {
             }
             if j < n {
                 let raw = &s[i + 1..j];
-                if raw.len() <= 4096 {
-                    out.push(raw.to_string());
-                }
+                if raw.len() <= 4096 { out.push(raw.to_string()); }
             }
             i = j + 1;
         } else {
